@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { Form, Field, withFormik } from 'formik';
 import * as Yup from 'yup';
 import './UserForm.css';
 
-function UserForm({ values, errors })
+function UserForm({ users, setUsers, values, errors, status })
 {
+
+    useEffect(() =>
+    {
+        status && setUsers([...users, status]);
+    }, [status]);
+
     return (
         <Form>
             <label>
@@ -45,7 +52,26 @@ const FormikUserForm = withFormik({
         email:    Yup.string().required("Please fill this in!"),
         password: Yup.string().required("Please fill this in!"),
         terms:    Yup.bool()
-    })
+    }),
+
+    handleSubmit(values, { setStatus, resetForm })
+    {
+        console.log("Submitting form data", values);
+
+        axios
+          .post('https://reqres.in/api/users', values)
+          .then(res =>
+          {
+              //console.log(res.data);
+              setStatus(res.data);
+          })
+          .catch(err =>
+          {
+              console.log("Error when submitting form data:", err);
+          })
+
+        resetForm();
+    }
 })(UserForm);
 
 export default FormikUserForm;
