@@ -10,7 +10,7 @@ function App()
     //  Users array
     const [users, setUsers] = useState([
         {
-            name: 'John Doe',
+            fullname: 'John Doe',
             email: 'john@doe.com',
             password: 'johndoe77'
         }

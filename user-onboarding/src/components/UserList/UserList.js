@@ -18,7 +18,7 @@ function UserList({ users })
                     {
                         return (
                             <tr key={key}>
-                                <td> {item.name} </td>
+                                <td> {item.fullname} </td>
                                 <td> {item.email} </td>
                                 <td> {item.password.length} </td>
                             </tr>
