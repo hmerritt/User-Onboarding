@@ -1,0 +1,17 @@
+
+form {
+  margin: 50px 0;
+}
+label {
+  display: block;
+  margin: 15px 0;
+}
+label .error {
+  color: red;
+}
+
+input {
+  display: block;
+  width: 180px;
+  height: 20px;
+}
