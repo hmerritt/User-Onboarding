@@ -1,0 +1,31 @@
+
+header {
+  padding: 20px 0;
+}
+
+h1 {
+    margin: 0;
+}
+
+
+.container {
+  padding-right: 40px;
+  padding-left: 40px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 847px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 1067px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1267px) {
+  .container {
+    width: 1170px;
+  }
+}

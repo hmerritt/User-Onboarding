@@ -1,0 +1,18 @@
+
+table {
+  text-align: justify;
+  margin-bottom: 28px;
+}
+
+table th,
+table td {
+  width: 100px;
+  padding: 0 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+thead th {
+  padding: 5px 20px;
+}
